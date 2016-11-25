@@ -1,0 +1,19 @@
+main:	readInt(a)
+	readInt(b)
+	zero := 0
+	resA := 1
+	resB := 1
+compA:	if a > zero then goto compB
+	writeInt(b)
+	goto final
+compB:	if b > zero then goto compC
+	writeInt(b)
+	goto final
+compC:	writeInt(a)
+	goto final
+final:	halt
+equ zero    M[0]
+equ a	    M[1]
+equ b	    M[2]
+equ resA    M[3]
+equ resB    M[4]

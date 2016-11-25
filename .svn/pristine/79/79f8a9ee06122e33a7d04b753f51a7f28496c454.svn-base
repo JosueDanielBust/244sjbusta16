@@ -1,0 +1,22 @@
+main:	suma := 0
+	finish := 0
+	uno := 1
+	i := 0
+	zero := 0
+ciclo:	readInt(read)
+	if read < zero then goto prom
+	suma := suma + read
+	i := i + uno
+	goto ciclo
+prom:	i := i - uno
+	finish := suma/i
+	goto fin
+fin:	writeInt(finish)
+	halt
+equ n	    M[0]
+equ i	    M[1]
+equ read    M[2]
+equ suma    M[3]
+equ finish  M[4]
+equ uno	    M[5]
+equ zero    M[6]

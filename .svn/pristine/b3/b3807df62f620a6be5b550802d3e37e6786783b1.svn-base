@@ -1,0 +1,66 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'calculator'
+require 'calcex'
+
+$calc = Calculator.new()
+
+def interactiveCalc
+  $stdout.print "> "
+  $stdout.flush
+  text = gets
+  makeCalc(text)
+  interactiveCalc()
+end
+
+def makeCalc(text)
+  $stdout.puts "=> " + $calc.eval(text).to_s + $calc.printVar()
+end
+
+def setEnvVars
+  ENV.each do |key, value|
+    if key.start_with?("CALCVAR") == true then
+      var = key.slice(7, key.size)
+      text = var + "=" + value + "\n"
+      $calc.eval(text)
+    end
+  end
+  $calc.changeSetEnvVars(false)
+end
+
+def processArgs
+  args = ARGF.argv
+  i = 0
+  while i < args.size-1 do
+    optionArg = args[i]
+    if optionArg == "-e" then
+      $calc.envConf()
+      setEnvVars()
+    elsif (optionArg == "-v") then
+      text = args[i+1] + "\n"
+      $calc.eval(text)
+      i += 1
+    else
+      lines = ARGF.readlines
+      lines.each do |line| makeCalc(line) end
+    end
+    i += 1
+  end
+end
+
+def main
+  setEnvVars()
+  processArgs()
+  interactiveCalc()
+end
+
+begin
+  main()
+rescue ParseError
+  puts "* Parse Error"
+rescue UnrecognizedTokenException
+  puts "* UnrecognizedTokenException"
+rescue
+  puts "* Unkown exception"
+end

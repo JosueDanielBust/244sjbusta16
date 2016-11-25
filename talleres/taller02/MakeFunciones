@@ -1,0 +1,15 @@
+OBJECTS=funciones2.o main.o
+CPPFLAGS="-Ddebug -g"
+
+main: $(OBJECTS)
+	g++ $(CPPFLAGS) -o $@ $(OBJECTS)
+
+funciones2.o: funciones2.cpp funciones2.h
+	g++ $(CPPFLAGS) -c $<
+
+main.o: funciones2.cpp funciones2.h main.cpp
+	g++ $(CPPFLAGS) -c $<
+
+clean:
+	rm -f *.o
+	rm -f main

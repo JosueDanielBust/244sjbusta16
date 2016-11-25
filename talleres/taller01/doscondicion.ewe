@@ -1,0 +1,22 @@
+main:	readInt(a)
+	readInt(b)
+	finish := 0
+	diez := 9
+	veinte := 21
+	uno := 1
+compA:	if a > diez then goto valid
+	goto compB
+compB:	if b < veinte then goto valid
+	goto fin
+valid:	finish := uno
+	goto fin
+fin:	writeInt(finish)
+	halt
+equ a		M[0]
+equ b		M[1]
+equ ra		M[2]
+equ rb		M[3]
+equ finish	M[4]
+equ diez	M[5]
+equ veinte	M[6]
+equ uno		M[7]

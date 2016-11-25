@@ -1,0 +1,27 @@
+main:	len := 100
+	readStr(str,len)
+	spaces := 0
+	i := 0
+	nl := 0
+	sp := 32
+	uno := 1
+ciclo:	temp := M[i+0]
+	if temp <> nl then goto ciclo2
+	goto fin
+ciclo2:	if temp = sp then goto addSpa
+	i := i + uno
+	goto ciclo
+addSpa:	spaces := spaces + uno
+	i := i + uno
+	goto ciclo
+fin:	writeInt(spaces)
+	halt
+equ str		M[0]
+equ spaces	M[100]
+equ nl		M[101]
+equ sp		M[102]
+equ len		M[103]
+equ temp	M[104]
+equ uno		M[105]
+equ i		M[106]
+equ base	M[107]

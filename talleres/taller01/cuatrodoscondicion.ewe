@@ -1,0 +1,36 @@
+main:	readInt(a)
+	readInt(b)
+	readInt(c)
+	readInt(d)
+	resA := 0
+	resB := 0
+	resC := 0
+	finish := 0
+	uno := 1
+compA:	if a > b then goto fin
+	resA := 1
+	goto compB
+compB:	if b > c then goto fin
+	resB := 1
+	goto compC
+compC:	if c > d then goto fin
+	resC := 1
+	goto valid1
+valid1:	if resA = uno then goto validA
+	goto fin
+validA:	if resA = resB then goto validB
+	goto fin
+validB:	if resA = resC then goto sTrue
+	goto fin
+sTrue:	finish := 1
+fin:	writeInt(finish)
+	halt
+equ a	    M[0]
+equ b	    M[1]
+equ c	    M[2]
+equ d	    M[3]
+equ resA    M[4]
+equ resB    M[5]
+equ resC    M[6]
+equ finish  M[7]
+equ uno	    M[8]

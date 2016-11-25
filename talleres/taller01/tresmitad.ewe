@@ -1,0 +1,16 @@
+main:	readInt(a)
+	readInt(b)
+	readInt(c)
+	i := a
+makeb:	if i > b then goto makec
+	i := b
+	goto makec
+makec:	if i < c then goto fin
+	i := c
+	goto fin
+fin:	writeInt(i)
+	halt
+equ a	M[0]
+equ b	M[1]
+equ c	M[2]
+equ i	M[3]

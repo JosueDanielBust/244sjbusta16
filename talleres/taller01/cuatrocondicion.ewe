@@ -1,0 +1,28 @@
+main:	readInt(a)
+	readInt(b)
+	readInt(c)
+	readInt(d)
+	sumaA := b - c
+	sumaB := c - d
+	resA := 0
+	resB := 0
+	finish := 0
+compA:	if a > sumaA then goto valid
+	resA := 1
+	goto compB
+compB:	if b > sumaB then goto valid
+	resB := 1
+	goto valid
+valid:	if resA = resB then goto fin
+	finish := 1
+fin:	writeInt(finish)
+	halt
+equ a	    M[0]
+equ b	    M[1]
+equ c	    M[2]
+equ d	    M[3]
+equ sumaA   M[4]
+equ sumaB   M[5]
+equ resA    M[6]
+equ resB    M[7]
+equ finish  M[8]

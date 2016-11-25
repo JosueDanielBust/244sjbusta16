@@ -1,0 +1,3 @@
+Number1: 10 Caracter: a Number2: 2343 Cadena2: Juan
+Number1: 20 Caracter: b Number2: 23 Cadena2: Jose
+Number1: 34 Caracter: d Number2: 34 Cadena2: Valor

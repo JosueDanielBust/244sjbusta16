@@ -1,0 +1,3 @@
+Number1: 10 Number2: 2343 Caracter: a Cadena1:  Juan Cadena2: otro
+Number1: 20 Number2: 23 Caracter: b Cadena1:    Jose Cadena2: prueba
+Number1: 34 Number2: 34 Caracter: d Cadena1:    Valor Cadena2: valor
